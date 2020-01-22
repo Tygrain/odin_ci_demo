@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Compile
-      run: cd bin && ../odin build ../src/* && cd ..
+      run: mkdir bin && cd bin && ../odin build ../src/* && cd ..
     - uses: actions/upload-artifact@master
       with:
         name: linux-native-build
