@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Compile
+      run: cd bin && ../odin build ../src/* && cd ..
+    - uses: actions/upload-artifact@master
+      with:
+        name: linux-native-build
+        path: bin
