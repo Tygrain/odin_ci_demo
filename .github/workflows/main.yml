@@ -16,6 +16,8 @@ jobs:
     steps:
     - name: Install clang
       run: sudo apt install clang
+    - name: Install llvm
+      run: sudo apt install llvm 
     - uses: actions/checkout@v1 
     - name: Compile
       run: mkdir bin && cd bin && ../odin build ../src/* && cd ..
