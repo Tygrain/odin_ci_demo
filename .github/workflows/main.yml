@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: clang-tidy check
-      uses: muxee/clang-tidy-action@0.0.1-rc1
+    - name: clang
+      run: apt install clang
     - uses: actions/checkout@v1 
     - name: Compile
       run: mkdir bin && cd bin && ../odin build ../src/* && cd ..
