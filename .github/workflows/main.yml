@@ -14,7 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: clang-tidy check
+      uses: muxee/clang-tidy-action@0.0.1-rc1
+    - uses: actions/checkout@v1 
     - name: Compile
       run: mkdir bin && cd bin && ../odin build ../src/* && cd ..
     - uses: actions/upload-artifact@master
